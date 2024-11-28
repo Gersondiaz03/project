@@ -1,4 +1,3 @@
-import React from 'react';
 import { Product } from '../types/calculator';
 
 interface ProductFormProps {
@@ -8,8 +7,8 @@ interface ProductFormProps {
 
 export function ProductForm({ product, onChange }: ProductFormProps) {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
-      <h3 className="font-semibold text-lg mb-3">{product.name}</h3>
+    <div className="p-4 mb-4 bg-white rounded-lg shadow-sm">
+      <h3 className="mb-3 text-lg font-semibold">{product.name}</h3>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label className="block text-sm font-medium text-gray-700">
@@ -23,7 +22,7 @@ export function ProductForm({ product, onChange }: ProductFormProps) {
               ...product,
               unitsSold: parseInt(e.target.value) || 0
             })}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
           />
         </div>
         <div>
@@ -38,7 +37,7 @@ export function ProductForm({ product, onChange }: ProductFormProps) {
               ...product,
               rawMaterialCost: parseFloat(e.target.value) || 0
             })}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
           />
         </div>
       </div>

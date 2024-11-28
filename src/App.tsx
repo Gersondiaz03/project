@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Calculator } from 'lucide-react';
 import { ProductForm } from './components/ProductForm';
 import { ResultsTable } from './components/ResultsTable';
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <div className="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
@@ -39,8 +39,8 @@ function App() {
             <ExportButton results={results} summary={summary} />
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 className="text-xl font-semibold mb-4">Costos Fijos</h2>
+          <div className="p-6 mb-8 bg-white rounded-lg shadow-sm">
+            <h2 className="mb-4 text-xl font-semibold">Costos Fijos</h2>
             <div className="max-w-md">
               <label className="block text-sm font-medium text-gray-700">
                 Total de costos fijos mensuales (COP)
@@ -50,15 +50,15 @@ function App() {
                 min="0"
                 value={fixedCosts}
                 onChange={(e) => setFixedCosts(parseFloat(e.target.value) || 0)}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 placeholder="Nómina, arriendo, servicios, etc."
               />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 className="text-xl font-semibold mb-4">Productos</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="p-6 mb-8 bg-white rounded-lg shadow-sm">
+            <h2 className="mb-4 text-xl font-semibold">Productos</h2>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {products.map((product) => (
                 <ProductForm
                   key={product.name}
@@ -71,8 +71,8 @@ function App() {
 
           <Summary summary={summary} />
 
-          <div className="mt-8 bg-white rounded-lg shadow-sm p-6">
-            <h2 className="text-xl font-semibold mb-4">Resultados por Producto</h2>
+          <div className="p-6 mt-8 bg-white rounded-lg shadow-sm">
+            <h2 className="mb-4 text-xl font-semibold">Resultados por Producto</h2>
             <ResultsTable results={results} />
           </div>
         </div>
